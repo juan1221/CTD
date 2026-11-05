@@ -48,7 +48,7 @@ ul {
 }
 
 .container {
-    width: 85%;
+    width: 95%;
     max-width: 1580px;
     margin: auto;
 }
@@ -172,20 +172,7 @@ p {
 }
 
 /* LOGO CENTRO */
-/*
-.logo{
-  color:rgb(145, 38, 38);
-  font-size:1.8rem;
-  font-weight:700;
-  margin-left:-40px;
-}
-a.logo-link{
-  text-decoration:none;
- color:rgb(253, 253, 253);
-  font-size:1.8rem;
-  font-weight:700;
-  margin-left:-40px;
-}*/
+
 .logo-container {
 
     text-align: center;
