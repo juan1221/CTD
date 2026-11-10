@@ -369,7 +369,7 @@ p {
 .leader-card {
     position: relative;
     background: rgb(255, 255, 255);
-    padding: 80px 50px 35px;
+    padding: 100px 50px 35px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
     position: relative;
