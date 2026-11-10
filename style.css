@@ -361,7 +361,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     top:100px;
-    gap: 30px;
+    gap: 40px;
     text-align: center ;
 }
 
@@ -369,7 +369,7 @@ p {
 .leader-card {
     position: relative;
     background: rgb(255, 255, 255);
-    padding: 100px 50px 35px;
+    padding: 90px 50px 50px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
     position: relative;
@@ -384,7 +384,7 @@ p {
 /*Fondo de la imagen del anillo*/
 .leader-image {
     position: absolute;
-    top: -55px;
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -739,9 +739,6 @@ footer p {
     .footer-content {
         grid-template-columns: 1fr;
     }
-
-
-
 }
 
 /* ===========================
@@ -797,12 +794,9 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         top: 85px;
         left: 0;
         width: 100%;
-
         background: #071521;
-
         flex-direction: column;
         text-align: center;
-
         padding: 25px 0;
     }
 
