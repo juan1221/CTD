@@ -360,7 +360,7 @@ p {
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    top:80px;
+    top:100px;
     gap: 30px;
     text-align: center ;
 }
