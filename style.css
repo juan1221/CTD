@@ -527,9 +527,6 @@ p {
     overflow-y: auto;
     padding: 100px;
     z-index: 1001;
-}
-
-.leader-card.active {
     padding-top: 135px;
     overflow: visible;
 }
