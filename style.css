@@ -971,6 +971,72 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         grid-template-columns: 1fr;
         width: 95%;
     }
+    .leader-card.active{
+
+        position: relative;
+
+        left: auto;
+        top: auto;
+
+        width: 100%;
+        max-width: 100%;
+
+        transform: none;
+
+        margin: 0 auto;
+
+        z-index: 100;
+    }
+
+    .leader-card.active .leader-image{
+
+        position: relative;
+
+        top: 0;
+        left: 0;
+
+        transform: none;
+
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 20px;
+    }
+
+    .leader-card.active .leader-image img{
+
+        width: 180px;
+        height: 180px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+    }
+
+    .leader-card.active {
+
+        padding-top: 40px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 25px;
+    }
+
+    .leader-card.active h3{
+        font-size: 1.8rem;
+    }
+
+    .leader-card.active .leader-role{
+        font-size: 1.1rem;
+    }
+
+    .leader-card.active p{
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .leader-card.active .leader-extra{
+        margin-top: 30px;
+    }
 /*
     .solution-card.active h3 {
         font-size: 1.8rem;
