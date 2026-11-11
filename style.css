@@ -48,13 +48,16 @@ ul {
 }
 
 .container {
-    width: 90%;
+   /* width: 90%;
     max-width: 1690px;
-    margin: auto;
+    margin: auto;*/
+
+    width:min(80%,1690px);
+    margin:auto;
 }
 
 .section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 /* ===========================
@@ -210,7 +213,6 @@ p {
 /* Oculto en escritorio */
 .menu-toggle {
     display: none;
-    ;
     background: transparent;
     border: 2px solid #d4af37;
     color: #fff;
@@ -247,7 +249,7 @@ p {
 =========================== */
 
 .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
 
@@ -319,7 +321,116 @@ p {
 /* ===========================
    SOLUTIONS
 =========================== */
+.solutions{
+    background:#fafafa;
+    text-align:left;
+}
 
+.solutions-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    margin-top:50px;
+}
+
+.solution-card{
+    background:#fff;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:all .4s ease;
+}
+
+.solution-card:hover{
+    transform:translateY(-10px);
+}
+
+.solution-card span{
+    color:var(--gold);
+    font-size:3rem;
+    font-weight:700;
+}
+
+.solution-card.active{
+    grid-column:1 / -1;
+    width:100%;
+    max-width:100%;
+    margin:auto;
+    z-index:999;
+    border:2px solid #D4AF37;
+    box-shadow:0 20px 60px rgba(0,0,0,.18);
+    padding:60px;
+}
+
+.solution-card.active h3{
+    font-size:2.5rem;
+}
+
+.solution-card.active span{
+    font-size:5rem;
+}
+
+.solution-card.active p{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.solution-card.behind{
+    opacity:.10;
+}
+.solution-extra{
+    display:none;
+    margin-top:30px;
+}
+
+.solution-card.active .solution-extra{
+    display:block;
+}
+
+.solution-extra h4{
+    font-size:1.3rem;
+    color:var(--navy);
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+.solution-extra p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.solution-extra ul{
+    padding-left:20px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.solution-extra li{
+    margin-bottom:10px;
+    color:var(--gray);
+    line-height:1.7;
+}
+.solution-card.active .solution-extra p,
+.solution-card.active .solution-extra li{
+    font-size:1.05rem;
+}
+.solution-more-btn{
+    background: none;
+    border: none;
+    color: #D4AF37;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.solution-more-btn:hover{
+    text-decoration: underline;
+    color: #181cef;
+}
+
+/*
 .dark-section {
     background: var(--navy);
 }
@@ -328,25 +439,100 @@ p {
     color: white;
 }
 
-.solutions-grid {
+.solutions-grid{
+    position: relative;
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
+    overflow: visible;
 }
 
-.solution-card {
+.solution-card{
     background: white;
     padding: 35px;
     border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    transition: all .4s ease;
 }
 
-.solution-card span {
+.solution-card span{
     color: var(--gold);
     font-size: 3rem;
     font-weight: bold;
 }
 
+.solution-card h3{
+    margin-top: 15px;
+}
+
+.solution-extra{
+    display: none;
+}
+
+/* CARD EXPANDIDA 
+
+.solution-card.active{
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 999;
+    transform: none;
+    border: 2px solid #D4AF37;
+    box-shadow: 0 20px 50px rgba(0,0,0,.20);
+}
+
+.solution-card.active .solution-extra{
+    display: block;
+    margin-top: 30px;
+}
+
+.solution-card.behind{
+    opacity: .10;
+}
+
+.solution-card.active span{
+    font-size: 5rem;
+}
+
+.solution-card.active h3{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.solution-card.active p{
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.solution-card.active h4{
+    font-size: 1.3rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.solution-card.active li{
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.solution-more-btn{
+    background: none;
+    border: none;
+    color: #D4AF37;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.solution-more-btn:hover{
+    text-decoration: underline;
+}
+
+*/
 /* ===========================
    LEADERSHIP
 =========================== */
@@ -435,21 +621,17 @@ p {
 .see-more-btn{
     background: none;
     border: none;
-    color: #D4AF37;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 0;
-     text-decoration: none;
-}
-.see-more-btn a{
-
-    text-decoration: none;
+     color: #D4AF37;
     
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 16px;
 }
+
 .see-more-btn:hover{
     text-decoration: underline;
+   color: #181cef;
 }
 
 .leader-card{
@@ -644,7 +826,6 @@ footer p {
 =========================== */
 
 .practice-card,
-.solution-card,
 .leader-card,
 .process-card,
 .why-card,
@@ -841,5 +1022,17 @@ REGLA GENERAL DE RESPONSIVE MOBILE
 
     .logo-subtitle {
         display: none;
+    }
+      .solutions-grid{
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+       .solution-card.active h3{
+        font-size:1.8rem;
+    }
+
+    .solution-card.active span{
+        font-size:3rem;
     }
 }

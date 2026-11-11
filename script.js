@@ -290,35 +290,48 @@ overlay.addEventListener('click', () => {
 /* ==========================
    OVERLAY FOR SOLUTION CARDS
 ========================== */
-document.querySelectorAll('.see-more-btn').forEach(button => {
 
-    button.addEventListener('click', function(){
+document.querySelectorAll('.solution-more-btn').forEach(button => {
 
-        const currentCard = this.closest('.solution-card');
-        const isOpen = currentCard.classList.contains('active');
+    button.addEventListener('click', function(e){
 
-        document.querySelectorAll('.solution-card').forEach(card => {
-            card.classList.remove('active');
-            card.classList.remove('dimmed');
+        e.preventDefault();
 
-            const btn = card.querySelector('.see-more-btn');
+        const currentCard =
+            this.closest('.solution-card');
 
-            if(btn){
-                btn.textContent = 'See More';
-            }
-        });
+        const isOpen =
+            currentCard.classList.contains('active');
+
+        document
+            .querySelectorAll('.solution-card')
+            .forEach(card => {
+
+                card.classList.remove('active');
+                card.classList.remove('behind');
+
+                const btn =
+                    card.querySelector('.solution-more-btn');
+
+                if(btn){
+                    btn.textContent = 'See More';
+                }
+
+            });
 
         if(!isOpen){
 
             currentCard.classList.add('active');
 
-            document.querySelectorAll('.solution-card').forEach(card => {
+            document
+                .querySelectorAll('.solution-card')
+                .forEach(card => {
 
-                if(card !== currentCard){
-                    card.classList.add('dimmed');
-                }
+                    if(card !== currentCard){
+                        card.classList.add('behind');
+                    }
 
-            });
+                });
 
             this.textContent = 'Show Less';
         }
