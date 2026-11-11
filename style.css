@@ -249,7 +249,7 @@ p {
 =========================== */
 
 .hero {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
 
@@ -286,7 +286,7 @@ p {
 .positioning {
     text-align: center;
     background: var(--cream);
-    padding: 90px 0;
+    padding: 80px 0;
 }
 
 .positioning p {
@@ -336,6 +336,7 @@ p {
 
 .solution-card{
     background:#fff;
+    border:2px solid #e8e4d1;
     padding:50px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.08);
@@ -353,14 +354,19 @@ p {
 }
 
 .solution-card.active{
-    grid-column:1 / -1;
-    width:100%;
-    max-width:100%;
-    margin:auto;
-    z-index:999;
+
     border:2px solid #D4AF37;
     box-shadow:0 20px 60px rgba(0,0,0,.18);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    max-width: 1100px;
+    max-height: 85vh;
+    overflow-y: auto;
     padding:60px;
+    z-index: 1001;
 }
 
 .solution-card.active h3{
@@ -430,109 +436,7 @@ p {
     color: #181cef;
 }
 
-/*
-.dark-section {
-    background: var(--navy);
-}
 
-.dark-section h2 {
-    color: white;
-}
-
-.solutions-grid{
-    position: relative;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    overflow: visible;
-}
-
-.solution-card{
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    position: relative;
-    z-index: 1;
-    transition: all .4s ease;
-}
-
-.solution-card span{
-    color: var(--gold);
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.solution-card h3{
-    margin-top: 15px;
-}
-
-.solution-extra{
-    display: none;
-}
-
-/* CARD EXPANDIDA 
-
-.solution-card.active{
-    grid-column: 1 / -1;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    z-index: 999;
-    transform: none;
-    border: 2px solid #D4AF37;
-    box-shadow: 0 20px 50px rgba(0,0,0,.20);
-}
-
-.solution-card.active .solution-extra{
-    display: block;
-    margin-top: 30px;
-}
-
-.solution-card.behind{
-    opacity: .10;
-}
-
-.solution-card.active span{
-    font-size: 5rem;
-}
-
-.solution-card.active h3{
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.solution-card.active p{
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.solution-card.active h4{
-    font-size: 1.3rem;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-
-.solution-card.active li{
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-
-.solution-more-btn{
-    background: none;
-    border: none;
-    color: #D4AF37;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 15px;
-    font-size: 16px;
-}
-
-.solution-more-btn:hover{
-    text-decoration: underline;
-}
-
-*/
 /* ===========================
    LEADERSHIP
 =========================== */
@@ -607,13 +511,18 @@ p {
 
 /* Card expandida */
 .leader-card.active{
-    position: absolute;
+    border:0.5px solid #D4AF37;
+    box-shadow:0 20px 60px rgba(0,0,0,.18);
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    max-width: 2000px;
-    z-index: 100;
-    text-align:center;    
+    transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    max-width: 1000px;
+    max-height: 75vh;
+    overflow-y: auto;
+    padding:100px;
+    z-index: 1001;
 }
 .leader-card.dimmed{
     opacity: 0.10;
@@ -621,8 +530,7 @@ p {
 .see-more-btn{
     background: none;
     border: none;
-     color: #D4AF37;
-    
+    color: #D4AF37;
     cursor: pointer;
     font-weight: 600;
     margin-top: 15px;
@@ -665,11 +573,11 @@ p {
 .card-overlay{
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.6);
+    background: rgba(0,0,0,.65);
     opacity: 0;
     visibility: hidden;
-    transition: all .4s ease;
-    z-index: 999;
+    transition: .3s ease;
+    z-index: 1000;
 }
 
 .card-overlay.active{
@@ -894,7 +802,9 @@ footer p {
     h1 {
         font-size: 2rem;
     }
-
+.eyebrow{
+       margin-top: 20px;
+    }
 
 }
 
@@ -919,6 +829,9 @@ footer p {
 
     .footer-content {
         grid-template-columns: 1fr;
+    }
+    .eyebrow{
+       margin-top: 20px;
     }
 }
 
@@ -1004,7 +917,7 @@ REGLA GENERAL DE RESPONSIVE MOBILE
     .hero-buttons {
         justify-content: center;
     }
-
+    .solutions-grid
     .practice-grid,
     .why-grid,
     .process-grid,

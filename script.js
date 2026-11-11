@@ -272,7 +272,7 @@ document.querySelectorAll('.see-more-btn').forEach(button => {
     });
 
 });
-
+/*
 overlay.addEventListener('click', () => {
 
     overlay.classList.remove('active');
@@ -285,17 +285,30 @@ overlay.addEventListener('click', () => {
     });
 
 });
-
+*/
 
 /* ==========================
    OVERLAY FOR SOLUTION CARDS
 ========================== */
 
-document.querySelectorAll('.solution-more-btn').forEach(button => {
+/* ==========================
+   SOLUTIONS CARDS EXPAND
+========================== */
 
-    button.addEventListener('click', function(e){
+const solutionCards = document.querySelectorAll('.solution-card');
+const solutionButtons = document.querySelectorAll('.solution-more-btn');
 
-        e.preventDefault();
+/* Crear overlay dinámicamente */
+
+const solutionOverlay = document.createElement('div');
+solutionOverlay.className = 'card-overlay';
+document.body.appendChild(solutionOverlay);
+
+solutionButtons.forEach(button => {
+
+    button.addEventListener('click', function (e) {
+
+        e.stopPropagation();
 
         const currentCard =
             this.closest('.solution-card');
@@ -303,37 +316,94 @@ document.querySelectorAll('.solution-more-btn').forEach(button => {
         const isOpen =
             currentCard.classList.contains('active');
 
-        document
-            .querySelectorAll('.solution-card')
-            .forEach(card => {
+        /* Cerrar todas */
 
-                card.classList.remove('active');
-                card.classList.remove('behind');
+        solutionCards.forEach(card => {
 
-                const btn =
-                    card.querySelector('.solution-more-btn');
+            card.classList.remove('active');
+            card.classList.remove('behind');
 
-                if(btn){
-                    btn.textContent = 'See More';
-                }
+            const btn =
+                card.querySelector('.solution-more-btn');
 
-            });
+            if (btn) {
+                btn.textContent = 'See More';
+            }
 
-        if(!isOpen){
+        });
 
-            currentCard.classList.add('active');
+        solutionOverlay.classList.remove('active');
 
-            document
-                .querySelectorAll('.solution-card')
-                .forEach(card => {
+        /* Si estaba abierta => cerrar */
 
-                    if(card !== currentCard){
-                        card.classList.add('behind');
-                    }
+        if (isOpen) {
+            return;
+        }
 
-                });
+        /* Abrir actual */
 
-            this.textContent = 'Show Less';
+        currentCard.classList.add('active');
+
+        solutionCards.forEach(card => {
+
+            if (card !== currentCard) {
+                card.classList.add('behind');
+            }
+
+        });
+
+        this.textContent = 'Show Less';
+
+        solutionOverlay.classList.add('active');
+
+        /* Centrar visualmente */
+
+        currentCard.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+
+    });
+
+});
+
+
+/* ==========================
+   CERRAR AL CLICK EN OVERLAY
+========================== */
+
+solutionOverlay.addEventListener('click', () => {
+
+    solutionCards.forEach(card => {
+
+        card.classList.remove('active');
+        card.classList.remove('behind');
+
+        const btn =
+            card.querySelector('.solution-more-btn');
+
+        if (btn) {
+            btn.textContent = 'See More';
+        }
+
+    });
+
+    solutionOverlay.classList.remove('active');
+
+});
+
+
+/* ==========================
+   EVITAR CERRAR AL HACER CLICK
+   DENTRO DE LA CARD ABIERTA
+========================== */
+
+solutionCards.forEach(card => {
+
+    card.addEventListener('click', (e) => {
+
+        if (card.classList.contains('active')) {
+            e.stopPropagation();
         }
 
     });
