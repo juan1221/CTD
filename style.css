@@ -1005,8 +1005,8 @@ REGLA GENERAL DE RESPONSIVE MOBILE
 
     .leader-card.active .leader-image img{
 
-        width: 180px;
-        height: 180px;
+        width: 100px;
+        height: 100px;
 
         object-fit: cover;
 
@@ -1018,7 +1018,7 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         padding-top: 40px;
         padding-left: 25px;
         padding-right: 25px;
-        padding-bottom: 25px;
+        padding-bottom: 40px;
     }
 
     .leader-card.active h3{
@@ -1037,12 +1037,5 @@ REGLA GENERAL DE RESPONSIVE MOBILE
     .leader-card.active .leader-extra{
         margin-top: 30px;
     }
-/*
-    .solution-card.active h3 {
-        font-size: 1.8rem;
-    }
 
-    .solution-card.active span {
-        font-size: 3rem;
-    }*/
 }
