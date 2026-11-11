@@ -950,7 +950,8 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         justify-content: center;
     }
 
-    .solutions-grid .practice-grid,
+    .solutions-grid,
+    .practice-grid,
     .why-grid,
     .process-grid,
     .leadership-grid {
@@ -973,12 +974,12 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         grid-template-columns: 1fr;
         width: 95%;
     }
-/*
+
     .solution-card.active h3 {
         font-size: 1.8rem;
     }
 
     .solution-card.active span {
         font-size: 3rem;
-    }*/
+    }
 }
