@@ -337,10 +337,14 @@ p {
 .solution-card {
     background: #fff;
     border: 2px solid #e8e4d1;
-    padding: 50px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
     transition: all .4s ease;
+}
+.solution-card h3{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
 }
 
 .solution-card:hover {
@@ -349,8 +353,9 @@ p {
 
 .solution-card span {
     color: var(--gold);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .solution-card.active {
@@ -367,23 +372,6 @@ p {
     overflow-y: auto;
     padding: 60px;
     z-index: 1001;
-}
-
-.solution-card.active h3 {
-    font-size: 2.5rem;
-}
-
-.solution-card.active span {
-    font-size: 5rem;
-}
-
-.solution-card.active p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.solution-card.behind {
-    opacity: .10;
 }
 
 .solution-extra {
@@ -467,6 +455,7 @@ p {
     box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
     position: relative;
     z-index: 1;
+    transition: all .4s ease;
 }
 
 .leader-card:hover {
@@ -496,10 +485,12 @@ p {
 .leader-role {
     color: var(--gold);
     font-weight: 600;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
-/* Estado expandido */
+/* ===========================
+   LEADER EXTRA
+=========================== */
 
 
 .leader-extra {
@@ -509,47 +500,116 @@ p {
 
 .leader-card.active .leader-extra {
     display: block;
-    margin-top: 250px;
+
 
 }
 
-/* Card expandida */
+/* ===========================
+   CARD EXPANDIDA
+=========================== */
 .leader-card.active {
-    border: 0.5px solid #D4AF37;
+
+    border: 2px solid #D4AF37;
     box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 90%;
-    max-width: 1000px;
-    max-height: 100vh;
-    overflow-y: auto;
-   /* padding: 100px;*/
-    z-index: 1001;
-    padding-top: 135px;
-    overflow: visible;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 1355px;
+    max-height: 63vh;
+    overflow-y: visible;
+    padding: 45px;
+    z-index: 1002;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    column-gap: 30px;
+    row-gap: 8px;
+    text-align: left;
+    align-items: start;
 }
 
 .leader-card.active .leader-image {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+
+    grid-column: 1;
+    grid-row: 1 / 99;
+
+    align-self: start;
+
 }
 
 .leader-card.active .leader-image img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    border-radius: 100%;
-    background: #fff;
-    border: 1px solid #d4af37;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.leader-card.dimmed {
+/* TODO EL CONTENIDO A LA COLUMNA DERECHA */
+
+.leader-card.active h3,
+.leader-card.active .leader-role,
+.leader-card.active>p,
+.leader-card.active .leader-extra,
+.leader-card.active .see-more-btn {
+    grid-column: 2;
+}
+
+/* TITULO */
+
+.leader-card.active h3 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin: 30px 5px 10px 0px;
+    padding: 0;
+}
+
+/* CARGO */
+.leader-card.active .leader-role {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin: 0px 10px 20px 0px;
+    padding: 30;
+    color: var(--gold);
+}
+
+/* RESUMEN */
+
+.leader-card.active>p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTENIDO EXPANDIDO */
+
+.leader-card.active .leader-extra {
+    margin-top: 10px;
+}
+
+.leader-card.active .leader-extra p {
+    margin: 0 0 20px 0;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* BOTON */
+
+.leader-card.active .see-more-btn {
+    margin-top: 10px;
+    justify-self: start;
+}
+
+
+.leader-card.behind {
     opacity: 0.10;
+    pointer-events: none;
 }
 
 .see-more-btn {
@@ -569,27 +629,6 @@ p {
 
 .leader-card {
     transition: all 0.4s ease;
-}
-
-.leader-card.active h3 {
-    font-size: 2.8rem;
-}
-
-.leader-card.active .leader-role {
-    font-size: 1.4rem;
-}
-
-.leader-card.active p {
-    font-size: 1.0rem;
-    line-height: 1.2rem;
-}
-
-.leader-card.active .leader-extra h4 {
-    font-size: 1.35rem;
-}
-
-.leader-card.active .leader-extra li {
-    font-size: 1.0rem;
 }
 
 /* ===========================
@@ -810,13 +849,13 @@ footer p {
 ==============================================================================================================================*/
 
 
-/* ===========================
-        PHONE
-=========================== */
+/* ==========================================
+   RESPONSIVE CELULAR
+========================================== */
+/* root */
+@media (max-width: 375px) {
 
-@media(max-width:380px) {
-
-    .btn-primary,
+  .btn-primary,
     .btn-secondary {
         width: 100%;
         text-align: center;
@@ -834,15 +873,42 @@ footer p {
         margin-top: 20px;
     }
 
+/* ==========================================
+   Leader Expansion Card
+========================================== */
+    
+    .leader-card.active {
+        width: 96%;
+        padding: 20px;
+    }
+
+    .leader-card.active .leader-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .leader-card.active h3 {
+        font-size: 1.7rem;
+    }
+
+    .leader-card.active .leader-role {
+        font-size: 1rem;
+    }
+
+    .leader-card.active>p,
+    .leader-card.active .leader-extra p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
 }
 
-/* ===========================
-            TABLET
-=========================== 760*/
+/* ==========================================
+   Tablet
+========================================== */
+@media (max-width: 992px) {
 
-@media(max-width:480px) {
-
-    h1 {
+ h1 {
         font-size: 3rem;
     }
 
@@ -862,35 +928,24 @@ footer p {
     .eyebrow {
         margin-top: 20px;
     }
+
+    /**/
+    .leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .leader-card {
+        padding: 90px 30px 30px;
+    }
 }
 
-/* ===========================
-            MONITOR
-=========================== 760*/
-@media (max-width: 1324px) {
+/* ==========================================
+   REGLA GENERAL
+========================================== */
+@media (max-width: 1397px) {
 
-    .nav {
-        display: none;
-    }
-
-    .nav.active {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .logo-subtitle {
-        display: none;
-    }
-
-}
-
-/* ===========================
-REGLA GENERAL DE RESPONSIVE MOBILE
-=========================== */
-
-@media(max-width:980px) {
-
-    .header {
+  .header {
         position: block;
     }
 
@@ -967,75 +1022,123 @@ REGLA GENERAL DE RESPONSIVE MOBILE
         display: none;
     }
 
+    /*Solution Card*/
+
     .solutions-grid {
         grid-template-columns: 1fr;
-        width: 95%;
-    }
-    .leader-card.active{
-
-        position: relative;
-
-        left: auto;
-        top: auto;
-
         width: 100%;
-        max-width: 100%;
-
-        transform: none;
-
-        margin: 0 auto;
-
-        z-index: 100;
+    }
+    /*Solution Card Expansion*/
+    .solution-card.active span {
+        font-size: 1.2rem;
     }
 
-    .leader-card.active .leader-image{
-
-        position: relative;
-
-        top: 0;
-        left: 0;
-
-        transform: none;
-
-        display: flex;
-        justify-content: center;
-
-        margin-bottom: 20px;
+    .solution-card.active>h3 {
+        font-size: 0.9rem;
     }
 
-    .leader-card.active .leader-image img{
-
-        width: 100px;
-        height: 100px;
-
-        object-fit: cover;
-
-        border-radius: 50%;
+    .solution-card.active p {
+        font-size: 0.7rem;
     }
+
+    .solution-extra.active p {
+        font-size: 0.8rem;
+    }
+
+    .solution-card.active .solution-extra p {
+        font-size: 0.7rem;
+        font-family: sans-serif;
+    }
+
+    .solution-card.active .solution-extra h3 {
+        font-size: 0.9rem;
+    }
+
+    .solution-card.active .solution-extra li {
+        font-size: 0.8rem;
+        font-family: 'Times New Roman', Times, serif;
+        padding-inline: 2px;
+        margin: 0.9px;
+    }
+
+    /*LEADER CARDS*/
+
+    .leadership-grid {
+        grid-template-columns: 1fr;
+        gap: 90px;
+    }
+
+    .leader-card {
+        padding: 90px 25px 25px;
+    }
+
+    .leader-image img {
+        width: 130px;
+        height: 130px;
+    }
+
+    /* LEADER CARD EXPANDIDA */
 
     .leader-card.active {
-
-        padding-top: 40px;
-        padding-left: 25px;
-        padding-right: 25px;
-        padding-bottom: 40px;
+        width: 90%;
+        max-height: 95vh;
+        top: 50%;
+        left: 50%;
+        padding: 25px;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        overflow-y: auto;
     }
 
-    .leader-card.active h3{
-        font-size: 1.8rem;
+    .leader-card.active .leader-image {
+        grid-column: 1;
+        grid-row: auto;
+
+        justify-self: center;
+        margin-bottom: 10px;
     }
 
-    .leader-card.active .leader-role{
-        font-size: 1.1rem;
+    .leader-card.active .leader-image img {
+        width: 140px;
+        height: 140px;
     }
 
-    .leader-card.active p{
-        font-size: 1rem;
-        line-height: 1.6;
+    .leader-card.active h3,
+    .leader-card.active .leader-role,
+    .leader-card.active > p,
+    .leader-card.active .leader-extra,
+    .leader-card.active .see-more-btn {
+        grid-column: 1;
     }
 
-    .leader-card.active .leader-extra{
-        margin-top: 30px;
+    .leader-card.active h3 {
+        font-size: 2rem;
+        text-align: center;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .leader-card.active .leader-role {
+        font-size: 1.15rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    .leader-card.active > p {
+        text-align: left;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .leader-card.active .leader-extra p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .leader-card.active .see-more-btn {
+        justify-self: center;
+        margin-top: 15px;
     }
 
 }
+

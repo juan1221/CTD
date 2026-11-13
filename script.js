@@ -236,56 +236,69 @@ window.addEventListener("scroll", () => {
 /* ==========================
    OVERLAY FOR LEADER CARDS
 ========================== */
-document.querySelectorAll('.see-more-btn').forEach(button => {
+const leaderCards =
+    document.querySelectorAll('.leader-card');
 
-    button.addEventListener('click', function(){
+const leaderButtons =
+    document.querySelectorAll('.see-more-btn');
 
-        const currentCard = this.closest('.leader-card');
-        const isOpen = currentCard.classList.contains('active');
+leaderButtons.forEach(button => {
 
-        document.querySelectorAll('.leader-card').forEach(card => {
+    button.addEventListener('click', function(e){
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const currentCard =
+            this.closest('.leader-card');
+
+        const isOpen =
+            currentCard.classList.contains('active');
+
+        leaderCards.forEach(card => {
+
             card.classList.remove('active');
-            card.classList.remove('dimmed');
+            card.classList.remove('behind');
 
-            const btn = card.querySelector('.see-more-btn');
+            const btn =
+                card.querySelector('.see-more-btn');
 
             if(btn){
                 btn.textContent = 'See More';
             }
+
         });
 
-        if(!isOpen){
+        solutionOverlay.classList.remove('active');
 
-            currentCard.classList.add('active');
-
-            document.querySelectorAll('.leader-card').forEach(card => {
-
-                if(card !== currentCard){
-                    card.classList.add('dimmed');
-                }
-
-            });
-
-            this.textContent = 'Show Less';
+        if(isOpen){
+            return;
         }
 
+        currentCard.classList.add('active');
+
+        leaderCards.forEach(card => {
+
+            if(card !== currentCard){
+                card.classList.add('behind');
+            }
+
+        });
+
+        this.textContent = 'Show Less';
+
+        solutionOverlay.classList.add('active');
+
+        currentCard.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+
     });
 
 });
-/*
-overlay.addEventListener('click', () => {
 
-    overlay.classList.remove('active');
 
-    document.querySelectorAll('.leader-card').forEach(card=>{
-        card.classList.remove('active');
-
-        const btn = card.querySelector('.see-more-btn');
-        if(btn) btn.textContent = 'See more';
-    });
-
-});
-*/
 
 /* ==========================
    OVERLAY FOR SOLUTION CARDS
@@ -392,6 +405,27 @@ solutionOverlay.addEventListener('click', () => {
 
 });
 
+/* ==========================
+   OVERLAY FOR LEADER CARDS
+========================== */
+
+solutionOverlay.addEventListener('click', () => {
+
+    leaderCards.forEach(card => {
+
+        card.classList.remove('active');
+        card.classList.remove('behind');
+
+        const btn =
+            card.querySelector('.see-more-btn');
+
+        if(btn){
+            btn.textContent = 'See More';
+        }
+
+    });
+
+});
 
 /* ==========================
    EVITAR CERRAR AL HACER CLICK
