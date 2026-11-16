@@ -13,7 +13,7 @@ pip install Flask
 pip install python-dotenv 
 pip install Flask python-dotenv
 
-#(Copia y pega este codigo en la terminar de la raiz de tu proyecto)
+
 
 #Y definir las variables de entorno en un archivo llamado .env
 
