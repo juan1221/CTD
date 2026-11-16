@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#071521">
 
     <title>CTD | Caribbean Treasure & Development</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -858,7 +858,8 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="Recursos/fotos/Lucil_Perfil.png" alt="Leadership">
+                        <img src="{{ url_for('static', filename='fotos/Lucile_Houellemont.png') }}"alt="Lucile_Houellemont">
+                        
                     </div>
                     <div class="leader-content"></div>
                     <h3>Lucile Houellemont Jimenes</h3>
@@ -908,7 +909,8 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="Recursos/fotos/Mario_Gamundi.jpg" alt="Leadership">
+                        <img src="{{ url_for('static', filename='fotos/Mario_Gamundi.jpg') }}"alt="Mario_Gamundi">
+                        
                     </div>
 <div class="leader-content"></div>
                     <h3>Mario A. Gamundi P.</h3>
@@ -952,7 +954,7 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="Recursos/fotos/jason_grullon.jpg" alt="Jason_Grullon">
+                        <img src="{{ url_for('static', filename='fotos/jason_grullon.jpg') }}"alt="Jason_Grullon">
                     </div>
 <div class="leader-content"></div>
                     <h3>Jason Ariel Grullon Pacheco</h3>
@@ -1013,21 +1015,13 @@
                 Discuss your mandate with CTD's senior team.
             </p>
 
-            <form class="contact-form">
-
-                <input type="text" placeholder="Full Name" required>
-
-                <input type="email" placeholder="Email Address" required>
-
-                <input type="text" placeholder="Organization">
-
-                <textarea rows="6" placeholder="Tell us about your project"></textarea>
-
-                <button type="submit" class="btn-primary">
-                    Submit Inquiry
-                </button>
-
-            </form>
+          <form class="contact-form" action="/send-email" method="POST">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="organization" placeholder="Organization">
+            <textarea rows="6" name="message" placeholder="Tell us about your project"></textarea>
+            <button type="submit" class="btn-primary">Submit Inquiry</button>
+        </form>
 
         </div>
 
@@ -1086,7 +1080,7 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
     <div class="card-overlay"></div>
 
 </body>

@@ -1,0 +1,1153 @@
+/* ===========================
+   CTD GLOBAL STYLES
+=========================== */
+
+:root {
+    --navy: #071521;
+    --navy-light: #0D2230;
+    --gold: #C7A663;
+    --cream: #F3EEE5;
+    --white: #ffffff;
+    --gray: #6B7280;
+    --border: #E5E7EB;
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+
+
+    width: min(80%, 1690px);
+    margin: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+p {
+    color: var(--gray);
+}
+
+.eyebrow {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   BUTTONS
+====0====================== */
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    background: var(--gold);
+    color: white;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #b48f4f;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    transition: .3s;
+}
+
+.btn-secondary:hover {
+    background: var(--gold);
+    color: white;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: rgba(7, 21, 33, .95);
+    backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+    background: #071521;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    min-height: 85px;
+}
+
+/* MENU IZQUIERDA */
+
+.navbar {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+}
+
+.navbar a {
+    color: white;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--gold);
+}
+
+/* LOGO CENTRO */
+
+.logo-container {
+
+    text-align: center;
+    padding: 10px;
+
+}
+
+.logo-main {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+
+}
+
+.logo-subtitle {
+
+    margin-top: 0px;
+    color: #D4AF37;
+    /* Gold */
+    
+    font-size: 8px;
+    font-weight: 600;
+    font-family: "Times New Roman", serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* BOTON DERECHA */
+
+    .nav-container .btn-primary {
+        margin-left: auto;
+    }
+
+    /* Oculto en escritorio */
+
+    .menu-toggle {
+        display: none;
+        background: transparent;
+        border: 2px solid #d4af37;
+        color: #fff;
+        font-size: 28px;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+
+
+
+    /* ===========================
+   MOBILE MENU
+=========================== */
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu span {
+        width: 28px;
+        height: 3px;
+        background: white;
+        border-radius: 10px;
+    }
+
+    /* ===========================
+   HERO
+=========================== */
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+
+        background:
+            linear-gradient(rgba(7, 21, 33, .85),
+                rgba(7, 21, 33, .85)),
+            url("#");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-content {
+        color: white;
+    }
+
+    .hero-description {
+        max-width: 700px;
+        color: #ddd;
+        font-size: 1.1rem;
+        margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    /* ===========================
+   POSITIONING
+=========================== */
+
+    .positioning {
+        text-align: center;
+        background: var(--cream);
+        padding: 80px 0;
+    }
+
+    .positioning p {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    /* ===========================
+   PRACTICES
+=========================== */
+
+    .practice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 50px;
+    }
+
+    .practice-card {
+        background: white;
+        border: 1px solid var(--border);
+        padding: 40px;
+        border-radius: 20px;
+        transition: .3s;
+    }
+
+    .practice-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    /* ===========================
+   SOLUTIONS
+=========================== */
+
+    .solutions {
+        background: #fafafa;
+        text-align: left;
+    }
+
+    .solutions-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .solution-card {
+        background: #fff;
+        border: 2px solid #e8e4d1;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        transition: all .4s ease;
+    }
+
+    .solution-card h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .solution-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .solution-card span {
+        color: var(--gold);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .solution-card.active {
+
+        border: 2px solid #D4AF37;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 1100px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 60px;
+        z-index: 1001;
+    }
+
+    .solution-extra {
+        display: none;
+        margin-top: 30px;
+    }
+
+    .solution-card.active .solution-extra {
+        display: block;
+    }
+
+    .solution-extra h4 {
+        font-size: 1.3rem;
+        color: var(--navy);
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .solution-extra p {
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .solution-extra ul {
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .solution-extra li {
+        margin-bottom: 10px;
+        color: var(--gray);
+        line-height: 1.7;
+    }
+
+    .solution-card.active .solution-extra p,
+    .solution-card.active .solution-extra li {
+        font-size: 1.05rem;
+    }
+
+    .solution-more-btn {
+        background: none;
+        border: none;
+        color: #D4AF37;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .solution-more-btn:hover {
+        text-decoration: underline;
+        color: #181cef;
+    }
+
+
+    /* ===========================
+   LEADERSHIP
+=========================== */
+
+    .leadership {
+        background: #fafafa;
+        text-align: left;
+    }
+
+    .leadership-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        top: 100px;
+        gap: 40px;
+        text-align: center;
+    }
+
+
+    .leader-card {
+        position: relative;
+        background: rgb(255, 255, 255);
+        padding: 90px 50px 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        position: relative;
+        z-index: 1;
+        transition: all .4s ease;
+    }
+
+    .leader-card:hover {
+        transform: translateY(-20px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, .10);
+    }
+
+    /*Fondo de la imagen del anillo*/
+
+    .leader-image {
+        position: absolute;
+        top: -0.10px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+
+    /*Contorno de la imagen del anillo*/
+
+    .leader-image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgb(219, 217, 217);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    }
+
+    .leader-role {
+        color: var(--gold);
+        font-weight: 600;
+        margin: 5px 0;
+    }
+
+    /* ===========================
+   LEADER EXTRA
+=========================== */
+
+
+    .leader-extra {
+        display: none;
+
+    }
+
+    .leader-card.active .leader-extra {
+        display: block;
+
+
+    }
+
+    /* ===========================
+   CARD EXPANDIDA
+=========================== */
+
+    .leader-card.active {
+
+        border: 2px solid #D4AF37;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95%;
+        max-width: 1355px;
+        max-height: 63vh;
+        overflow-y: visible;
+        padding: 45px;
+        z-index: 1002;
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        column-gap: 30px;
+        row-gap: 8px;
+        text-align: left;
+        align-items: start;
+    }
+
+    .leader-card.active .leader-image {
+
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+
+        grid-column: 1;
+        grid-row: 1 / 99;
+
+        align-self: start;
+
+    }
+
+    .leader-card.active .leader-image img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    /* TODO EL CONTENIDO A LA COLUMNA DERECHA */
+
+    .leader-card.active h3,
+    .leader-card.active .leader-role,
+    .leader-card.active>p,
+    .leader-card.active .leader-extra,
+    .leader-card.active .see-more-btn {
+        grid-column: 2;
+    }
+
+    /* TITULO */
+
+    .leader-card.active h3 {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin: 30px 5px 10px 0px;
+        padding: 0;
+    }
+
+    /* CARGO */
+
+    .leader-card.active .leader-role {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin: 0px 10px 20px 0px;
+        padding: 30;
+        color: var(--gold);
+    }
+
+    /* RESUMEN */
+
+    .leader-card.active>p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* CONTENIDO EXPANDIDO */
+
+    .leader-card.active .leader-extra {
+        margin-top: 10px;
+    }
+
+    .leader-card.active .leader-extra p {
+        margin: 0 0 20px 0;
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+
+    /* BOTON */
+
+    .leader-card.active .see-more-btn {
+        margin-top: 10px;
+        justify-self: start;
+    }
+
+
+    .leader-card.behind {
+        opacity: 0.10;
+        pointer-events: none;
+    }
+
+    .see-more-btn {
+        background: none;
+        border: none;
+        color: #D4AF37;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .see-more-btn:hover {
+        text-decoration: underline;
+        color: #181cef;
+    }
+
+    .leader-card {
+        transition: all 0.4s ease;
+    }
+
+    /* ===========================
+        OVERLAY
+=========================== */
+
+    .card-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .65);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease;
+        z-index: 1000;
+    }
+
+    .card-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ===========================
+        WHY CTD
+=========================== */
+
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .why-card {
+        background: var(--navy);
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .why-card h3 {
+        color: white;
+        margin-bottom: 15px;
+    }
+
+    .why-card p {
+        color: #d1d5db;
+    }
+
+    /* ===========================
+    PROCESS
+=========================== */
+
+    .process {
+        background: var(--cream);
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .process-card {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+    }
+
+    .process-card span {
+        color: var(--gold);
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    /* ===========================
+    EXPERIENCE
+=========================== */
+
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .experience-card {
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 35px;
+    }
+
+    /* ===========================
+    INSIGHTS
+=========================== */
+
+    .insights {
+        background: #fafafa;
+    }
+
+    .insights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+    }
+
+    .insight-card {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+    }
+
+    /* ===========================
+    CONTACT
+=========================== */
+
+    .contact-section {
+        background: var(--navy);
+        color: white;
+        text-align: center;
+        padding: 120px 0;
+    }
+
+    .contact-form {
+        max-width: 700px;
+        margin: 40px auto 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        border: none;
+        border-radius: 12px;
+        padding: 16px;
+    }
+
+    /* ===========================
+    FOOTER
+=========================== */
+
+    footer {
+        background: #041018;
+        color: white;
+    }
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        padding: 80px 0;
+    }
+
+    footer a,
+    footer p {
+        color: #9CA3AF;
+    }
+
+    .copyright {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        padding: 20px;
+    }
+
+    /* ===========================
+    ANIMATIONS
+=========================== */
+
+    .practice-card,
+    .leader-card,
+    .process-card,
+    .why-card,
+    .experience-card,
+    .experience-card,
+    .insight-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: .7s;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ===========================
+    BACK TO TOP
+=========================== */
+
+    .back-to-top {
+        position: fixed;
+        right: 25px;
+        bottom: 25px;
+        width: 50px;
+        height: 50px;
+
+        border: none;
+        border-radius: 50%;
+
+        background: var(--gold);
+        color: white;
+
+        opacity: 0;
+        visibility: hidden;
+
+        z-index: 999;
+    }
+
+    .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ===========================================================================================================================
+                                            RESPONSIVE DESIGN
+==============================================================================================================================*/
+
+
+    /* ==========================================
+   RESPONSIVE CELULAR
+========================================== */
+    /* root */
+    @media (max-width: 375px) {
+
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .eyebrow {
+            margin-top: 20px;
+        }
+
+        /* ==========================================
+   Leader Expansion Card
+========================================== */
+
+        .leader-card.active {
+            width: 96%;
+            padding: 20px;
+        }
+
+        .leader-card.active .leader-image img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .leader-card.active h3 {
+            font-size: 1.7rem;
+        }
+
+        .leader-card.active .leader-role {
+            font-size: 1rem;
+        }
+
+        .leader-card.active>p,
+        .leader-card.active .leader-extra p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+    }
+
+    /* ==========================================
+   Tablet
+========================================== */
+
+    @media (max-width: 992px) {
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .practice-grid,
+        .why-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+
+        .eyebrow {
+            margin-top: 20px;
+        }
+
+        /**/
+        .leadership-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .leader-card {
+            padding: 90px 30px 30px;
+        }
+    }
+
+    /* ==========================================
+   REGLA GENERAL
+========================================== */
+
+    @media (max-width: 1397px) {
+
+        .header {
+            position: block;
+        }
+
+        .menu-toggle {
+            display: block;
+            position: absolute;
+            top: 40px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .mobile-menu {
+            display: flex;
+            margin-left: auto;
+        }
+
+        .menu-toggle {
+            display: flex;
+        }
+
+        .navbar {
+            display: none;
+            position: absolute;
+            top: 85px;
+            left: 0;
+            width: 100%;
+            background: #071521;
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 0;
+        }
+
+        .navbar.active {
+            display: flex;
+        }
+
+        .navbar a {
+            padding: 12px 0;
+        }
+
+        .nav-container .btn-primary {
+            display: none;
+        }
+
+        .logo {
+            margin-left: 50px;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .solutions-grid,
+        .practice-grid,
+        .why-grid,
+        .process-grid,
+        .leadership-grid {
+            grid-template-columns: 1fr;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .logo-subtitle {
+            display: none;
+        }
+
+        /*Solution Card*/
+
+        .solutions-grid {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        /*Solution Card Expansion*/
+        .solution-card.active span {
+            font-size: 1.2rem;
+        }
+
+        .solution-card.active>h3 {
+            font-size: 0.9rem;
+        }
+
+        .solution-card.active p {
+            font-size: 0.7rem;
+        }
+
+        .solution-extra.active p {
+            font-size: 0.8rem;
+        }
+
+        .solution-card.active .solution-extra p {
+            font-size: 0.7rem;
+            font-family: sans-serif;
+        }
+
+        .solution-card.active .solution-extra h3 {
+            font-size: 0.9rem;
+        }
+
+        .solution-card.active .solution-extra li {
+            font-size: 0.8rem;
+            font-family: 'Times New Roman', Times, serif;
+            padding-inline: 2px;
+            margin: 0.9px;
+        }
+
+        /*LEADER CARDS*/
+
+        .leadership-grid {
+            grid-template-columns: 1fr;
+            gap: 90px;
+        }
+
+        .leader-card {
+            padding: 90px 25px 25px;
+        }
+
+        .leader-image img {
+            width: 130px;
+            height: 130px;
+        }
+
+        /* LEADER CARD EXPANDIDA */
+
+        .leader-card.active {
+            width: 90%;
+            max-height: 95vh;
+            top: 50%;
+            left: 50%;
+            padding: 25px;
+            grid-template-columns: 1fr;
+            row-gap: 10px;
+            overflow-y: auto;
+        }
+
+        .leader-card.active .leader-image {
+            grid-column: 1;
+            grid-row: auto;
+
+            justify-self: center;
+            margin-bottom: 10px;
+        }
+
+        .leader-card.active .leader-image img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .leader-card.active h3,
+        .leader-card.active .leader-role,
+        .leader-card.active>p,
+        .leader-card.active .leader-extra,
+        .leader-card.active .see-more-btn {
+            grid-column: 1;
+        }
+
+        .leader-card.active h3 {
+            font-size: 2rem;
+            text-align: center;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .leader-card.active .leader-role {
+            font-size: 1.15rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        .leader-card.active>p {
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .leader-card.active .leader-extra p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .leader-card.active .see-more-btn {
+            justify-self: center;
+            margin-top: 15px;
+        }
+
+    }
+
