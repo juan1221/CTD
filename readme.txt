@@ -15,7 +15,7 @@ pip install Flask python-dotenv
 
 
 
-#Y definir las variables de entorno en un archivo llamado .env
+#Definir las variables de entorno en un archivo llamado .env
 
 SMTP_SERVER=smtp.office365.com /* o el de Gmail*/
 SMTP_PORT=587
