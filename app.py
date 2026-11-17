@@ -21,8 +21,7 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 @app.route('/')
 @app.route('/index.html')
 def home():
-    # En lugar de return render_template('index.html')
-    return redirect(url_for('contact'))
+    return render_template('index.html')
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
