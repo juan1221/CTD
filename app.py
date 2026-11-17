@@ -30,6 +30,7 @@ EMAIL_RECEIVER = os.getenv("EMAIL_RECEIVER")
 # ==========================
 
 @app.route('/')
+@app.route('/index.html')
 def home():
     return render_template('index.html')
 
