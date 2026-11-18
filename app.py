@@ -7,9 +7,11 @@ from email.mime.multipart import MIMEMultipart
 from email.header import Header
 
 
+#from dotenv import load_dotenv
+
 # CORRECCIÓN 1: Agregar los paréntesis a load_dotenv()
 
-
+#load_dotenv()
 app = Flask(__name__)
 
 SMTP_SERVER = os.getenv("SMTP_SERVER")
@@ -61,7 +63,7 @@ Message:
         server.quit()
 
         # CORRECCIÓN 2: Redirigir en lugar de renderizar directamente
-        return redirect(url_for('home'))
+        return redirect(url_for('contact'))
 
     except Exception as e:
         print("ERROR:", str(e))
