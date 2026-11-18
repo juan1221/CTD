@@ -9,7 +9,8 @@
     <meta name="theme-color" content="#071521">
 
     <title>CTD | Caribbean Treasure & Development</title>
-    <link rel="stylesheet" href="/static/style.css">
+                                 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -858,10 +859,10 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="{{ url_for('static', filename='fotos/Lucile_Houellemont.png') }}"alt="Lucile_Houellemont">
+                        <img src="{{ url_for('static', filename='img/Lucile_Houellemont.png') }}"alt="Lucile_Houellemont">
                         
                     </div>
-                    <div class="leader-content"></div>
+                 
                     <h3>Lucile Houellemont Jimenes</h3>
 
                     <p class="leader-role">
@@ -909,10 +910,10 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="{{ url_for('static', filename='fotos/Mario_Gamundi.jpg') }}"alt="Mario_Gamundi">
+                        <img src="{{ url_for('static', filename='img/Mario_Gamundi.jpg') }}"alt="Mario_Gamundi">
                         
                     </div>
-<div class="leader-content"></div>
+
                     <h3>Mario A. Gamundi P.</h3>
 
                     <p class="leader-role">
@@ -954,9 +955,9 @@
                 <div class="leader-card">
 
                     <div class="leader-image">
-                        <img src="{{ url_for('static', filename='fotos/jason_grullon.jpg') }}"alt="Jason_Grullon">
+                        <img src="{{ url_for('static', filename='img/jason_grullon.jpg') }}"alt="Jason_Grullon">
                     </div>
-<div class="leader-content"></div>
+
                     <h3>Jason Ariel Grullon Pacheco</h3>
 
                     <p class="leader-role">
@@ -1079,8 +1080,8 @@
         </div>
 
     </footer>
-
-    <script src="/static/script.js"></script>
+href="">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <div class="card-overlay"></div>
 
 </body>
