@@ -1,0 +1,14 @@
+mi_proyecto_flask/
+├── venv/                  # Entorno virtual con las librerías instaladas (no se sube a Git)
+├── static/                # Archivos públicos que no cambian dinámicamente
+│   ├── css/
+│   │   └── styles.css     # Hojas de estilo
+│   ├── js/
+│   │   └── main.js        # Scripts de JavaScript
+│   └── img/               # Imágenes, íconos y logotipos
+├── templates/             # Plantillas HTML (motor Jinja2)
+│   ├── base.html          # Plantilla base (menú, cabecera, pie de página)
+│   └── index.html         # Página principal que hereda de base.html
+├── .gitignore             # Lista de archivos/carpetas que Git debe ignorar (como venv/)
+├── app.py                 # Archivo principal con la configuración y rutas de Flask
+└── requirements.txt       # Lista de dependencias del proyecto
