@@ -422,9 +422,9 @@ p {
 =========================== */
 
 .leadership {
-    background: #fafafa;
+  background: #fafafa;
     text-align: left;
-    padding-bottom: 150px;
+    padding: 80px 0 180px;
 }
 
 .leadership-grid {
