@@ -1,7 +1,32 @@
+
+/* ==========================
+   ANIMACION DE ESCRITURA DEL HERO
+========================== */
+
+const typingHeadline = document.querySelector(".hero-title-typing");
+
+if (typingHeadline && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const headlineText = typingHeadline.textContent.trim();
+    let visibleCharacters = 0;
+
+    typingHeadline.textContent = "";
+
+    function typeHeadlineCharacter() {
+        visibleCharacters += 1;
+        typingHeadline.textContent = headlineText.slice(0, visibleCharacters);
+
+        if (visibleCharacters < headlineText.length) {
+            window.setTimeout(typeHeadlineCharacter, 40);
+        }
+    }
+
+    window.setTimeout(typeHeadlineCharacter, 250);
+}
+
+
 /* ==========================
    MENU MOBILE
 ========================== */
-
 const menuBtn = document.querySelector(".menu-toggle");
 const navbar = document.querySelector(".navbar");
 const navLinks = document.querySelectorAll(".navbar a");
