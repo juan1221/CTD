@@ -431,7 +431,7 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    text-align: justify;
+    text-align: left;
     margin-top: 100px;
 }
 
