@@ -50,7 +50,7 @@ ul {
 .container {
 
 
-    width: min(80%, 1690px);
+    width: min(95%, 1790px);
     margin: auto;
 }
 
@@ -176,9 +176,6 @@ p {
 
 .logo-container {
 
-    text-align: center;
-    padding: 10px;
-
 }
 
 .logo-main {
@@ -198,7 +195,7 @@ p {
 
     font-size: 8px;
     font-weight: 600;
-    font-family: "Times New Roman", serif;
+    font-family: Arial, sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -422,7 +419,7 @@ p {
 =========================== */
 
 .leadership {
-  background: #fafafa;
+    background: #fafafa;
     text-align: left;
     padding: 100px 0 100px;
 }
@@ -974,20 +971,21 @@ footer p {
     }
 
     .menu-toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        top: 40px;
-        right: 30px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 64px;
+        height: 64px;
         z-index: 1000;
     }
 
     .mobile-menu {
         display: flex;
         margin-left: auto;
-    }
-
-    .menu-toggle {
-        display: flex;
     }
 
     .navbar {
