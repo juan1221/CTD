@@ -507,7 +507,8 @@ p {
     width: 95%;
     max-width: 1355px;
     max-height: 63vh;
-    overflow-y: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
     padding: 45px;
     z-index: 1002;
     display: grid;
@@ -526,7 +527,7 @@ p {
     transform: none;
 
     grid-column: 1;
-    grid-row: 1 / 99;
+    grid-row: 1 / span 5;
 
     align-self: start;
 
@@ -547,6 +548,8 @@ p {
 .leader-card.active .leader-extra,
 .leader-card.active .see-more-btn {
     grid-column: 2;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 /* TITULO */
