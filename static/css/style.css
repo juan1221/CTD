@@ -432,7 +432,7 @@ p {
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 
