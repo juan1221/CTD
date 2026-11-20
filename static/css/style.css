@@ -1227,3 +1227,40 @@ footer p {
     }
 
 }
+
+@media (max-width: 767px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: 116px 0 48px;
+    }
+
+    .hero .eyebrow {
+        margin-top: 0;
+        font-size: .75rem;
+        letter-spacing: 1.5px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.9rem, 7vw, 2.7rem);
+        line-height: 1.15;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        max-width: 24rem;
+        margin-inline: auto;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
