@@ -900,6 +900,34 @@ footer p {
     transform: translateY(0);
 }
 
+.positioning .reveal-pending {
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.positioning p.reveal-pending {
+    transition-delay: .35s;
+}
+
+.positioning .reveal-pending:not(.show) {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.section .eyebrow.reveal-pending,
+.section .eyebrow + h2.reveal-pending {
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.section .eyebrow + h2.reveal-pending {
+    transition-delay: .25s;
+}
+
+.section .eyebrow.reveal-pending:not(.show),
+.section .eyebrow + h2.reveal-pending:not(.show) {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
 /* ===========================
     BACK TO TOP
 =========================== */

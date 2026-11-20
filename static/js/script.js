@@ -88,8 +88,23 @@ window.addEventListener("scroll", () => {
    SCROLL REVEAL
 ========================== */
 
+const positioningRevealElements = document.querySelectorAll(
+    ".positioning h2, .positioning p"
+);
+const sectionHeadingRevealElements = document.querySelectorAll(
+    ".section .eyebrow, .section .eyebrow + h2"
+);
+const reducedMotionPreference =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reducedMotionPreference) {
+    [...positioningRevealElements, ...sectionHeadingRevealElements].forEach(element => {
+        element.classList.add("reveal-pending");
+    });
+}
+
 const revealElements = document.querySelectorAll(
-    ".practice-card, .solution-card, .leader-card, .why-card, .process-card, .experience-card, .insight-card"
+    ".positioning h2, .positioning p, .section .eyebrow, .section .eyebrow + h2, .practice-card, .solution-card, .leader-card, .why-card, .process-card, .experience-card, .insight-card"
 );
 
 function revealOnScroll() {
