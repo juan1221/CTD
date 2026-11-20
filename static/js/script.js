@@ -3,7 +3,11 @@
    ANIMACION DE ESCRITURA DEL HERO
 ========================== */
 
+const translateUiText = text =>
+    window.ctdI18n ? window.ctdI18n.translateText(text) : text;
+
 const typingHeadline = document.querySelector(".hero-title-typing");
+let headlineTypingTimeout = null;
 
 if (typingHeadline && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const headlineText = typingHeadline.textContent.trim();
@@ -16,12 +20,23 @@ if (typingHeadline && !window.matchMedia("(prefers-reduced-motion: reduce)").mat
         typingHeadline.textContent = headlineText.slice(0, visibleCharacters);
 
         if (visibleCharacters < headlineText.length) {
-            window.setTimeout(typeHeadlineCharacter, 40);
+            headlineTypingTimeout = window.setTimeout(typeHeadlineCharacter, 40);
         }
     }
 
-    window.setTimeout(typeHeadlineCharacter, 250);
+    headlineTypingTimeout = window.setTimeout(typeHeadlineCharacter, 250);
 }
+
+window.addEventListener("ctd:languagechange", () => {
+    window.clearTimeout(headlineTypingTimeout);
+    headlineTypingTimeout = null;
+
+    if (typingHeadline) {
+        typingHeadline.textContent = translateUiText(
+            "When the Dominican Republic matters, experience matters."
+        );
+    }
+});
 
 
 /* ==========================
@@ -137,8 +152,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     anchor.addEventListener("click", function (e) {
 
+        const targetSelector = this.getAttribute("href");
+
+        if (targetSelector === "#") {
+            e.preventDefault();
+            return;
+        }
+
         const target =
-            document.querySelector(this.getAttribute("href"));
+            document.querySelector(targetSelector);
 
         if (target) {
 
@@ -192,7 +214,7 @@ if (form) {
             e.preventDefault();
 
             alert(
-                "Please complete all required fields."
+                translateUiText("Please complete all required fields.")
             );
 
         }
@@ -377,7 +399,7 @@ leaderButtons.forEach(button => {
 
             if (btn) {
 
-                btn.textContent = "See More";
+                btn.textContent = translateUiText("See more");
 
             }
 
@@ -399,7 +421,7 @@ leaderButtons.forEach(button => {
 
         });
 
-        this.textContent = "Show Less";
+        this.textContent = translateUiText("Show Less");
 
         solutionOverlay.classList.add("active");
 
@@ -445,7 +467,7 @@ solutionButtons.forEach(button => {
 
             if (btn) {
 
-                btn.textContent = "See More";
+                btn.textContent = translateUiText("See More");
 
             }
 
@@ -467,7 +489,7 @@ solutionButtons.forEach(button => {
 
         });
 
-        this.textContent = "Show Less";
+        this.textContent = translateUiText("Show Less");
 
         solutionOverlay.classList.add("active");
 
@@ -495,7 +517,7 @@ solutionOverlay.addEventListener("click", () => {
             card.querySelector(".solution-more-btn");
 
         if (btn) {
-            btn.textContent = "See More";
+            btn.textContent = translateUiText("See More");
         }
 
     });
@@ -509,7 +531,7 @@ solutionOverlay.addEventListener("click", () => {
             card.querySelector(".see-more-btn");
 
         if (btn) {
-            btn.textContent = "See More";
+            btn.textContent = translateUiText("See more");
         }
 
     });
