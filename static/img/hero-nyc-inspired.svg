@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Original modern city skyline at dusk</title>
+  <desc id="desc">An original, fictional skyline of modern towers beside a river at dusk, with no signs or advertisements.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#081521"/>
+      <stop offset=".48" stop-color="#233846"/>
+      <stop offset=".78" stop-color="#bb8b69"/>
+      <stop offset="1" stop-color="#d3a776"/>
+    </linearGradient>
+    <radialGradient id="sunsetGlow" cx=".76" cy=".69" r=".48">
+      <stop stop-color="#e7b77d" stop-opacity=".56"/>
+      <stop offset="1" stop-color="#e7b77d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="river" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#334c58"/>
+      <stop offset="1" stop-color="#0b1c28"/>
+    </linearGradient>
+    <linearGradient id="glassA" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#54717b"/>
+      <stop offset=".38" stop-color="#243d4a"/>
+      <stop offset="1" stop-color="#101f2a"/>
+    </linearGradient>
+    <linearGradient id="glassB" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#172b37"/>
+      <stop offset=".48" stop-color="#405a63"/>
+      <stop offset="1" stop-color="#152a36"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#273942"/>
+      <stop offset=".5" stop-color="#596166"/>
+      <stop offset="1" stop-color="#293b44"/>
+    </linearGradient>
+    <pattern id="windowGrid" width="32" height="42" patternUnits="userSpaceOnUse">
+      <rect x="7" y="8" width="10" height="20" fill="#e1bb83" opacity=".48"/>
+      <rect x="20" y="8" width="5" height="20" fill="#bad0d0" opacity=".24"/>
+      <path d="M0 35h32" stroke="#0a1a24" stroke-opacity=".5" stroke-width="3"/>
+    </pattern>
+    <pattern id="fineWindows" width="24" height="32" patternUnits="userSpaceOnUse">
+      <rect x="5" y="6" width="8" height="16" fill="#d9b780" opacity=".4"/>
+      <path d="M0 27h24" stroke="#0a1a24" stroke-opacity=".45" stroke-width="2"/>
+    </pattern>
+    <linearGradient id="foreground" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#1b303a"/>
+      <stop offset="1" stop-color="#081722"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="870" fill="url(#sunsetGlow)"/>
+  <path d="M0 490c190-42 321-11 466-28 151-18 236-68 369-39 121 26 172 4 269-22 136-35 235 28 347 6 152-29 298-4 469-41v188H0Z"
+        fill="#d5aa80" opacity=".08"/>
+  <path d="M0 611c199-32 303 5 463-17 153-21 245-47 382-19 118 24 179-10 295-29 108-18 211 26 332 7 172-26 289 6 448-17v161H0Z"
+        fill="#f2c99a" opacity=".09"/>
+
+  <path d="M0 745 150 716 270 731 395 687 520 720 635 660 755 700 867 625 980 680 1095 615 1217 672 1323 604 1443 658 1557 596 1669 649 1785 586 1920 632v190H0Z"
+        fill="#253b43" opacity=".82"/>
+
+  <g fill="#20343d">
+    <path d="M544 741V623h83v118z"/>
+    <path d="M625 741V579h98v162z"/>
+    <path d="M718 741V647h71v94z"/>
+    <path d="M789 741V607h82v134z"/>
+    <path d="M868 741V573h93v168z"/>
+    <path d="M958 741V633h82v108z"/>
+    <path d="M1038 741V581h87v160z"/>
+    <path d="M1123 741V615h92v126z"/>
+    <path d="M1212 741V549h89v192z"/>
+    <path d="M1299 741V603h84v138z"/>
+    <path d="M1380 741V559h104v182z"/>
+    <path d="M1482 741V618h86v123z"/>
+    <path d="M1565 741V573h101v168z"/>
+    <path d="M1664 741V625h85v116z"/>
+    <path d="M1746 741V588h95v153z"/>
+    <path d="M1838 741V642h82v99z"/>
+  </g>
+
+  <g>
+    <path d="M644 741V429h141v312z" fill="url(#glassA)"/>
+    <path d="M654 439h121v302H654z" fill="url(#windowGrid)" opacity=".75"/>
+    <path d="M644 490h141M644 559h141M644 628h141" stroke="#b8c5c1" stroke-opacity=".18"/>
+    <path d="M644 429h141l-16-18H660z" fill="#6a7778" opacity=".55"/>
+
+    <path d="M819 741V335q0-12 12-12h122q12 0 12 12v406z" fill="url(#glassB)"/>
+    <path d="M832 335h120v406H832z" fill="url(#fineWindows)" opacity=".78"/>
+    <path d="M819 420h145M819 510h145M819 600h145M819 690h145" stroke="#cad3cb" stroke-opacity=".2"/>
+    <path d="M842 323v-31h91v31M855 292v-17h65v17" fill="#354a52"/>
+
+    <path d="M978 741V477l22-18h126v282z" fill="url(#stone)"/>
+    <path d="M990 475h125v266H990z" fill="url(#windowGrid)" opacity=".64"/>
+    <path d="M978 545h148M978 631h148" stroke="#e1d3bd" stroke-opacity=".2"/>
+    <path d="M1000 459v-20h108v20" fill="#607075" opacity=".75"/>
+
+    <path d="M1138 741V382q0-10 10-10h145q10 0 10 10v359z" fill="url(#glassA)"/>
+    <path d="M1150 378h141v363h-141z" fill="url(#fineWindows)" opacity=".78"/>
+    <path d="M1138 469h165M1138 561h165M1138 652h165" stroke="#c6d0cb" stroke-opacity=".2"/>
+    <path d="M1161 372v-24h111v24" fill="#607278" opacity=".72"/>
+
+    <path d="M1318 741V288l26-21h128v474z" fill="url(#glassB)"/>
+    <path d="M1330 285h130v456h-130z" fill="url(#windowGrid)" opacity=".78"/>
+    <path d="M1318 389h154M1318 492h154M1318 596h154M1318 694h154" stroke="#ccd4ce" stroke-opacity=".2"/>
+    <path d="M1344 267v-22h99v22" fill="#82908b" opacity=".65"/>
+
+    <path d="M1490 741V407q0-13 13-13h121q13 0 13 13v334z" fill="url(#stone)"/>
+    <path d="M1503 405h121v336h-121z" fill="url(#fineWindows)" opacity=".7"/>
+    <path d="M1490 482h147M1490 568h147M1490 654h147" stroke="#e5d8c3" stroke-opacity=".19"/>
+    <path d="M1513 394v-34h79v34" fill="#637176"/>
+
+    <path d="M1653 741V322q0-11 11-11h139q11 0 11 11v419z" fill="url(#glassA)"/>
+    <path d="M1665 320h137v421h-137z" fill="url(#windowGrid)" opacity=".78"/>
+    <path d="M1653 425h161M1653 529h161M1653 635h161" stroke="#d1d9d3" stroke-opacity=".2"/>
+    <path d="M1684 311v-27h77v27" fill="#83908b" opacity=".62"/>
+
+    <path d="M1818 741V477h102v264z" fill="url(#stone)"/>
+    <path d="M1830 478h90v263h-90z" fill="url(#fineWindows)" opacity=".64"/>
+    <path d="M1818 552h102M1818 640h102" stroke="#dfd5c5" stroke-opacity=".18"/>
+  </g>
+
+  <g fill="#172b35">
+    <path d="M0 690h94v89H0zM84 674h112v105H84zM189 707h84v72h-84z"/>
+    <path d="M255 666h98v113h-98zM348 696h113v83H348zM454 651h106v128H454z"/>
+  </g>
+  <g fill="url(#fineWindows)" opacity=".55">
+    <path d="M0 690h94v89H0zM84 674h112v105H84zM189 707h84v72h-84z"/>
+    <path d="M255 666h98v113h-98zM348 696h113v83H348zM454 651h106v128H454z"/>
+  </g>
+
+  <path d="M0 757c241-18 418 11 632-7 220-19 422-31 621-8 230 27 443 7 667-9v347H0Z"
+        fill="url(#river)"/>
+  <path d="M0 768c235-18 421 10 633-8 222-19 421-30 619-8 229 26 445 7 668-9"
+        fill="none" stroke="#d6b486" stroke-opacity=".35" stroke-width="3"/>
+
+  <g fill="none" stroke="#e5bd89" stroke-linecap="round">
+    <path d="M696 812h105m-165 24h213m-246 27h190m-94 31h182" stroke-opacity=".27" stroke-width="3"/>
+    <path d="M971 805h175m-235 34h291m-256 35h211m-165 30h277" stroke-opacity=".22" stroke-width="4"/>
+    <path d="M1311 803h130m-195 31h256m-187 34h243m-184 34h169" stroke-opacity=".2" stroke-width="3"/>
+    <path d="M1585 801h182m-217 33h249m-200 35h275m-235 34h187" stroke-opacity=".18" stroke-width="3"/>
+  </g>
+
+  <path d="M0 1002c282-63 531-21 780 18 250 40 444 26 648-11 195-35 334-35 492 2v69H0Z"
+        fill="url(#foreground)"/>
+  <path d="M0 1002c282-63 531-21 780 18 250 40 444 26 648-11 195-35 334-35 492 2"
+        fill="none" stroke="#caa678" stroke-opacity=".42" stroke-width="4"/>
+</svg>
