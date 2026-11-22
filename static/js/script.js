@@ -20,7 +20,7 @@ if (typingHeadline && !window.matchMedia("(prefers-reduced-motion: reduce)").mat
         typingHeadline.textContent = headlineText.slice(0, visibleCharacters);
 
         if (visibleCharacters < headlineText.length) {
-            headlineTypingTimeout = window.setTimeout(typeHeadlineCharacter, 40);
+            headlineTypingTimeout = window.setTimeout(typeHeadlineCharacter, 30);
         }
     }
 
@@ -185,7 +185,14 @@ const form = document.querySelector(".contact-form");
 
 if (form) {
 
+    let isSubmitting = false;
+
     form.addEventListener("submit", (e) => {
+
+        if (isSubmitting) {
+            e.preventDefault();
+            return;
+        }
 
         const fields =
             form.querySelectorAll(
@@ -217,6 +224,15 @@ if (form) {
                 translateUiText("Please complete all required fields.")
             );
 
+        }
+
+        if (valid) {
+            isSubmitting = true;
+            const submitButton = form.querySelector('button[type="submit"]');
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = translateUiText("Sending...");
+            }
         }
 
     });

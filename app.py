@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from flask import Flask, request, render_template, redirect, url_for
 import smtplib
 
@@ -9,7 +10,6 @@ from email.header import Header
 
 #from dotenv import load_dotenv
 
-# CORRECCIÓN 1: Agregar los paréntesis a load_dotenv()
 
 #load_dotenv()
 app = Flask(__name__)
@@ -37,23 +37,39 @@ def send_email():
     message = request.form.get('message', '').strip()
 
     subject = f"Start a Confidential Conversation CTD - {fullname}"
+    organization_display = organization or "Not provided"
+    email_css_path = Path(app.static_folder) / "css" / "tcorreo.css"
+    email_css = email_css_path.read_text(encoding="utf-8")
 
-    body = f"""
-New Contact Form Submission
+    plain_body = f"""NEW CONFIDENTIAL CONVERSATION
 
 Name: {fullname}
 Email: {email}
-Organization: {organization}
-Message:
+Organization: {organization_display}
+
+Message
 {message}
-"""
+
+Submitted through the CTD website."""
+
+    html_body = render_template(
+        "templates_correo.html",
+        subject=subject,
+        fullname=fullname,
+        email=email,
+        organization=organization_display,
+        message=message.replace("\r\n", "\n").replace("\r", "\n"),
+        email_css=email_css,
+    )
 
     try:
-        msg = MIMEMultipart()
+        msg = MIMEMultipart("alternative")
         msg["From"] = EMAIL_SENDER
         msg["To"] = EMAIL_RECEIVER
         msg["Subject"] = Header(subject, "utf-8")
-        msg.attach(MIMEText(body, "plain", "utf-8"))
+        msg["Reply-To"] = email
+        msg.attach(MIMEText(plain_body, "plain", "utf-8"))
+        msg.attach(MIMEText(html_body, "html", "utf-8"))
 
         server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.ehlo()
@@ -64,8 +80,7 @@ Message:
         server.sendmail(EMAIL_SENDER, EMAIL_RECEIVER, msg.as_bytes())
         server.quit()
 
-        # CORRECCIÓN 2: Redirigir en lugar de renderizar directamente
-        return redirect(url_for('contact'))
+        return redirect(url_for('home') + '#contact')
 
     except Exception as e:
         print("ERROR:", str(e))

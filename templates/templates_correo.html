@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ subject }}</title>
+  <style type="text/css">{{ email_css|safe }}</style>
+</head>
+<body class="mail-body">
+  <table class="mail-background" role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td class="mail-outer-cell" align="center">
+        <table class="mail-container" role="presentation" width="600" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td class="mail-header">
+              <p class="mail-eyebrow">CONFIDENTIAL INQUIRY</p>
+              <h1 class="mail-title">New Contact Submission</h1>
+            </td>
+          </tr>
+          <tr>
+            <td class="mail-intro-cell">
+              <p class="mail-intro">
+                A new confidential conversation request was submitted through the CTD website.
+              </p>
+              <table class="mail-details" role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td class="mail-label">Name</td>
+                  <td class="mail-value">{{ fullname }}</td>
+                </tr>
+                <tr>
+                  <td class="mail-label mail-no-top-border">Email</td>
+                  <td class="mail-value mail-no-top-border"><a class="mail-link" href="mailto:{{ email }}">{{ email }}</a></td>
+                </tr>
+                <tr>
+                  <td class="mail-label mail-no-top-border">Organization</td>
+                  <td class="mail-value mail-no-top-border">{{ organization }}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="mail-message-cell">
+              <p class="mail-message-label">MESSAGE</p>
+              <div class="mail-message">{{ message|e|replace('\n', '<br>')|safe }}</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="mail-footer">
+              <p class="mail-footer-text">CTD | Caribbean Treasure &amp; Development</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

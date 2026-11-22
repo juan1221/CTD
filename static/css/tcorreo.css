@@ -1,0 +1,135 @@
+.mail-body {
+  margin: 0;
+  padding: 0;
+  background-color: #eef1f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mail-background {
+  background-color: #eef1f4;
+}
+
+.mail-outer-cell {
+  padding: 32px 16px;
+}
+
+.mail-container {
+  width: 600px;
+  max-width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mail-header {
+  padding: 28px 36px;
+  background-color: #071521;
+  border-bottom: 4px solid #c7a663;
+}
+
+.mail-eyebrow {
+  margin: 0 0 6px;
+  color: #c7a663;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.mail-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.mail-intro-cell {
+  padding: 32px 36px 12px;
+}
+
+.mail-intro {
+  margin: 0 0 24px;
+  color: #5f6973;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mail-details {
+  border-collapse: collapse;
+}
+
+.mail-label,
+.mail-value {
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.mail-label {
+  width: 28%;
+  border-right: 0;
+  background-color: #f7f8fa;
+  color: #071521;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mail-value {
+  background-color: #ffffff;
+  color: #27313a;
+}
+
+.mail-no-top-border {
+  border-top: 0;
+}
+
+.mail-link {
+  color: #8d7040;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.mail-message-cell {
+  padding: 20px 36px 34px;
+}
+
+.mail-message-label {
+  margin: 0 0 10px;
+  color: #071521;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.mail-message {
+  padding: 18px 20px;
+  border-left: 4px solid #c7a663;
+  background-color: #fafbfc;
+  color: #27313a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.mail-footer {
+  padding: 18px 36px;
+  background-color: #071521;
+  text-align: center;
+}
+
+.mail-footer-text {
+  margin: 0;
+  color: #aeb7bf;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 480px) {
+  .mail-header,
+  .mail-intro-cell,
+  .mail-message-cell,
+  .mail-footer {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}

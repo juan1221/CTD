@@ -160,6 +160,7 @@
         "Start a Confidential Conversation": "Inicie una conversación confidencial",
         "Discuss your mandate with CTD's senior team.": "Converse sobre su proyecto con el equipo sénior de CTD.",
         "Submit Inquiry": "Enviar consulta",
+        "Sending...": "Enviando...",
         "Full Name": "Nombre completo",
         "Email Address": "Correo electrónico",
         "Organization": "Organización",

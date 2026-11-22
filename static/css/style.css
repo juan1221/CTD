@@ -430,7 +430,12 @@ p {
 }
 
 .solution-card {
-    background: #fff;
+    background-color: #fff;
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .72) 100%),
+        var(--solution-background, none);
+    background-position: center;
+    background-size: cover;
     border: 2px solid #e8e4d1;
     padding: 30px;
     border-radius: 10px;
@@ -438,20 +443,49 @@ p {
     transition: all .4s ease;
 }
 
+.solution-card-landing {
+    --solution-background: url("../img/solutions/solution 1.png");
+}
+
+.solution-card-security {
+    --solution-background: url("../img/solutions/solution 2.png");
+}
+
+.solution-card-advisory {
+    --solution-background: url("../img/solutions/solution 3.png");
+}
+
+.solution-card-infrastructure {
+    --solution-background: url("../img/solutions/solution 4.png");
+}
+
+.solution-card-private-client {
+    --solution-background: url("../img/solutions/solution 5.png");
+}
+
 .solution-card h3 {
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 10px;
+    color: #000;
+}
+
+.solution-card p {
+    color: #111;
 }
 
 .solution-card:hover {
     transform: translateY(-10px);
 }
 
-.solution-card span {
-    color: var(--gold);
-    font-size: 2rem;
+.solution-card > span {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background-color: rgba(7, 21, 33, .65);
+    color: #ecbd72;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 }
 
 .solution-card.active {
@@ -481,7 +515,7 @@ p {
 
 .solution-extra h4 {
     font-size: 1.3rem;
-    color: var(--navy);
+    color: #000;
     margin-top: 25px;
     margin-bottom: 10px;
 }
@@ -500,12 +534,12 @@ p {
 
 .solution-extra li {
     margin-bottom: 10px;
-    color: var(--gray);
+    color: #111;
     line-height: 1.7;
 }
 
 .solution-extra li::marker {
-    color: var(--gold);
+    color: #8d7040;
 }
 
 .solution-card.active .solution-extra p,
@@ -724,13 +758,16 @@ p {
 }
 
 .solution-more-btn {
-    background: none;
-    border: none;
-    color: #D4AF37;
+    padding: 9px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    background-color: rgba(7, 21, 33, .72);
+    color: #ecbd72;
     cursor: pointer;
     font-weight: 600;
     margin-top: 15px;
     font-size: 16px;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
 }
 
 .see-more-btn {
@@ -743,10 +780,20 @@ p {
     font-size: 16px;
 }
 
-.see-more-btn:hover,
-.solution-more-btn:hover {
+.see-more-btn:hover {
     text-decoration: underline;
     color: #181cef;
+}
+
+.solution-more-btn:hover {
+    background-color: rgba(13, 34, 48, .82);
+    color: #f3d48f;
+    transform: translateY(-1px);
+}
+
+.solution-more-btn:focus-visible {
+    outline: 2px solid #ecbd72;
+    outline-offset: 3px;
 }
 
 
