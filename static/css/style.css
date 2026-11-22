@@ -430,12 +430,10 @@ p {
 }
 
 .solution-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background-color: #fff;
-    background-image:
-        linear-gradient(180deg, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .72) 100%),
-        var(--solution-background, none);
-    background-position: center;
-    background-size: cover;
     border: 2px solid #e8e4d1;
     padding: 30px;
     border-radius: 10px;
@@ -443,24 +441,28 @@ p {
     transition: all .4s ease;
 }
 
-.solution-card-landing {      
-    --solution-background: "{{ url_for('static', filename='img/solutions/solution1.png') }}";
+.solution-card-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-.solution-card-security {
-    --solution-background: url("../img/solutions/solution 2.png");
+.solution-card::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .34) 0%, rgba(255, 255, 255, .72) 100%);
+    content: "";
+    pointer-events: none;
 }
 
-.solution-card-advisory {
-    --solution-background: url("../img/solutions/solution 3.png");
-}
-
-.solution-card-infrastructure {
-    --solution-background: url("../img/solutions/solution 4.png");
-}
-
-.solution-card-private-client {
-    --solution-background: url("../img/solutions/solution 5.png");
+.solution-card > :not(.solution-card-image) {
+    position: relative;
+    z-index: 2;
 }
 
 .solution-card h3 {
