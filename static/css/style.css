@@ -443,7 +443,7 @@ p {
     transition: all .4s ease;
 }
 
-.solution-card-landing {
+.solution-card-landing {      
     --solution-background: url("/static/img/solutions/solution 1.png");
 }
 
