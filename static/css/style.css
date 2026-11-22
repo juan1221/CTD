@@ -444,7 +444,7 @@ p {
 }
 
 .solution-card-landing {
-    --solution-background: url("../img/solutions/solution 1.png");
+    --solution-background: url("/static/img/solutions/solution\ 1.png");
 }
 
 .solution-card-security {
