@@ -7,6 +7,7 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
+from urllib.parse import quote, urlencode
 
 from dotenv import load_dotenv
 from flask import Flask, abort, redirect, render_template, request, session, url_for
@@ -100,7 +101,7 @@ def send_email():
         abort(400)
     if not fullname or not EMAIL_PATTERN.fullmatch(email):
         abort(400)
-    if any("\r" in value or "\n" in value for value in values.values()):
+    if any("\r" in value or "\n" in value for value in (fullname, email)):
         abort(400)
 
     if not all((SMTP_SERVER, EMAIL_SENDER, EMAIL_PASSWORD, EMAIL_RECEIVER)):
@@ -108,6 +109,11 @@ def send_email():
         abort(503)
 
     subject = f"Start a Confidential Conversation CTD - {fullname}"
+    reply_subject = f"Re: {subject}"
+    reply_url = (
+        f"mailto:{quote(email, safe='@.+-_')}?"
+        f"{urlencode({'subject': reply_subject, 'body': message})}"
+    )
     organization_display = organization or "Not provided"
     email_css_path = Path(app.static_folder) / "css" / "tcorreo.css"
     email_css = email_css_path.read_text(encoding="utf-8")
@@ -130,6 +136,7 @@ Submitted through the CTD website."""
         email=email,
         organization=organization_display,
         message=message,
+        reply_url=reply_url,
         email_css=email_css,
     )
 
