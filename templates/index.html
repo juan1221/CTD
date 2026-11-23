@@ -1025,10 +1025,11 @@
             </p>
 
             <form class="contact-form" action="{{ url_for('send_email') }}" method="POST">
-                <input type="text" name="fullname" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="text" name="organization" placeholder="Organization">
-                <textarea rows="6" name="message" placeholder="Tell us about your project"></textarea>
+                <input type="hidden" name="csrf_token" value="{{ session['_csrf_token'] }}">
+                <input type="text" name="fullname" placeholder="Full Name" maxlength="120" required>
+                <input type="email" name="email" placeholder="Email Address" maxlength="254" required>
+                <input type="text" name="organization" placeholder="Organization" maxlength="160">
+                <textarea rows="6" name="message" placeholder="Tell us about your project" maxlength="5000"></textarea>
                 <button type="submit" class="btn-primary">Submit Inquiry</button>
             </form>
 
