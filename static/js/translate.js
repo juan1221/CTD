@@ -150,6 +150,7 @@
         "Risk Management": "Gestión de riesgos",
         "Security planning and operational resilience.": "Planificación de seguridad y resiliencia operativa.",
         "Insights": "Perspectivas",
+        "What We Do" : "Que hacemos",
         "Perspectives & Analysis": "Perspectivas y análisis",
         "Foreign Investment Trends": "Tendencias de inversión extranjera",
         "Understanding market opportunities.": "Comprender las oportunidades del mercado.",
