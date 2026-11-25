@@ -455,8 +455,7 @@ p {
     object-position: center top;
 }
 
-.experience-card-image,
-.insight-card-image {
+.experience-card-image {
     position: static;
     z-index: auto;
     width: 100%;
@@ -471,8 +470,7 @@ p {
     z-index: 2;
 }
 
-.experience-card > :not(.experience-card-image),
-.insight-card > :not(.insight-card-image) {
+.experience-card > :not(.experience-card-image) {
     position: relative;
     z-index: 2;
 }
@@ -504,6 +502,11 @@ p {
 .experience-card p,
 .insight-card p {
     padding-bottom: 24px;
+}
+
+.insight-card h3,
+.insight-card p {
+    color: #fff;
 }
 
 .solution-card:hover {
@@ -973,6 +976,7 @@ p {
     overflow: hidden;
     padding: 0;
     border-radius: 10px;
+    background: var(--navy);
 }
 
 /* ===========================
